@@ -1,0 +1,32 @@
+<md-list-item class="md-3-line md-long-text">
+    <img ng-src="assets/img/avatar.png" class="md-avatar" alt="My photo">
+    <div class="md-list-item-text">
+        <h4>by <span id="email" class="italics">{{commentModel.email}}</span></h4>
+        <p>
+            <span id="readonlyBody" ng-if="!ctrl.editMode">{{commentModel.body}}</span>
+            <div layout="row" ng-if="ctrl.editMode">
+                <md-input-container flex>
+                    <label>Edit comment</label>
+                    <textarea id="editableBody" ng-model="ctrl.editableComment.body" md-maxlength="140" rows="5" ng-keydown="ctrl.onKeyPress($event)" md-select-on-focus></textarea>
+                </md-input-container>
+            </div>
+        </p>
+    </div>
+    <md-menu id="optionsMenu" ng-if="showOptionsMenu && !ctrl.editMode">
+        <md-button aria-label="More options" class="md-icon-button" ng-click="$mdOpenMenu($event)">
+            <md-icon md-menu-origin md-svg-icon="assets/img/ic_overflow.svg"></md-icon>
+        </md-button>
+        <md-menu-content>
+            <md-menu-item>
+                <md-button id="editBtn" ng-click="ctrl.editComment()">
+                    <md-icon md-menu-align-target md-svg-icon="assets/img/ic_edit.svg"></md-icon> Edit comment
+                </md-button>
+            </md-menu-item>
+            <md-menu-item>
+                <md-button id="deleteBtn" ng-click="deleteFn()">
+                    <md-icon md-menu-align-target md-svg-icon="assets/img/ic_delete.svg"></md-icon> Delete comment
+                </md-button>
+            </md-menu-item>
+        </md-menu-content>
+    </md-menu>
+</md-list-item>

@@ -1,0 +1,28 @@
+<md-dialog aria-label="Post" flex="66">
+    <form>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>Post</h2>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="dialog.cancel()">
+                    <md-icon md-svg-src="assets/img/ic_close.svg" aria-label="Close"></md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+        <md-dialog-content layout-padding>
+            <md-input-container class="md-block" flex>
+                <label>Title</label>
+                <input ng-model="dialog.post.title">
+            </md-input-container>
+            <md-input-container class="md-block" flex>
+                <label>Body</label>
+                <textarea ng-model="dialog.post.body" md-maxlength="200" rows="8" md-select-on-focus></textarea>
+            </md-input-container>
+        </md-dialog-content>
+        <md-dialog-actions layout-padding layout="row">
+            <span flex></span>
+            <md-button ng-click="dialog.cancel()">Cancel</md-button>
+            <md-button ng-click="dialog.submit()">Submit</md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>

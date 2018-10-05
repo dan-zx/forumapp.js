@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="assets/libs/angular.min.js"></script>
+    <script src="assets/libs/angular-material.min.js"></script>
+    <script src="assets/libs/angular-animate.min.js"></script>
+    <script src="assets/libs/angular-aria.min.js"></script>
+    <script src="assets/libs/angular-route.min.js"></script>
+    <script src="app/components/comments/commentsController.js"></script>
+    <script src="app/components/comments/commentsService.js"></script>
+    <script src="app/components/posts/postsController.js"></script>
+    <script src="app/components/posts/postsService.js"></script>
+    <script src="app/shared/comment/commentDirective.js"></script>
+    <script src="app/shared/comment/commentDirectiveController.js"></script>
+    <script src="app/shared/header/headerController.js"></script>
+    <script src="app/shared/header/headerDirective.js"></script>
+    <script src="app/shared/misc/sharedObjectsService.js"></script>
+    <script src="app/shared/misc/syncHttpService.js"></script>
+    <script src="app/shared/postDialog/postDialogController.js"></script>
+    <script src="app/shared/post/postDirective.js"></script>
+    <script src="app/shared/profile/profileController.js"></script>
+    <script src="app/shared/profile/profileDirective.js"></script>
+    <script src="app/app.routes.js"></script>
+    <script src="app/app.theme.js"></script>
+    <script src="app/app.module.js"></script>
+    <link rel="stylesheet" type="text/css" href="assets/libs/angular-material.min.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+    <link rel="icon shortcut" type="image/png" href="assets/img/favicon.ico" />
+    <meta name="viewport" content="width=device-width" />
+</head>
+<body ng-app="forumApp">
+    <span contenteditable="true" class="hidden">
+        <!-- Firefox needs this nonsense usless element to capture the 'paste' events -->
+    </span> 
+    <div layout="row">
+        <md-sidenav md-component-id="user-profile" class="md-sidenav-left">
+            <profile></profile>
+        </md-sidenav>
+        <md-content class="match-parent">
+            <header-view></header-view>
+            <div ng-view></div>
+        </md-content>
+    </div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<md-toolbar class="paper-shadow">
+    <div id="toolbar" class="md-toolbar-tools" ng-show="!header.showSearch">
+        <md-button id="navBtn" class="md-icon-button" aria-label="{{header.shouldGoBack ? 'Back' : 'Menu'}}" ng-click="header.navigation()">
+            <md-icon id="navIcon" md-svg-icon="{{header.shouldGoBack ? 'assets/img/ic_arrow_back.svg' : 'assets/img/ic_menu.svg'}}"></md-icon>
+        </md-button>
+        <h2 style="padding-top: 6px;">
+            <div layout="row" layout-margin>
+                <div><img src="assets/img/angular_logo.svg" alt="log" height="25px" /></div>
+                <div>  Forum</div>
+            </div>
+        </h2>
+        <span flex></span>
+        <md-button id="showSearchBtn" aria-label="Search" ng-click="header.showSearch = true">
+            <md-icon md-svg-icon="assets/img/ic_search.svg"></md-icon>
+        </md-button>
+    </div>
+    <div id="searchToolbar" class="md-toolbar-tools" ng-show="header.showSearch">
+        <md-button id="hideSearchBtn" class="md-icon-button" aria-label="Back" ng-click="header.hideSearch()">
+            <md-icon md-svg-icon="assets/img/ic_arrow_back.svg"></md-icon>
+        </md-button>
+        <md-input-container md-theme="dark" flex md-no-float class="md-block search-input">
+            <input id="search" ng-model="filter" placeholder="Search..." />
+        </md-input-container>
+    </div>
+</md-toolbar>

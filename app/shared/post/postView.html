@@ -1,0 +1,41 @@
+<md-card>
+    <md-card-title>
+        <md-card-title-text>
+            <span class="md-headline">
+                <div layout="row">
+                    <div id="title">{{postModel.title}}</div>
+                    <span flex></span>
+                    <div>
+                        <md-menu id="optionsMenu" ng-if="showOptionsMenu">
+                            <md-button aria-label="More options" class="md-icon-button" ng-click="$mdOpenMenu($event)">
+                                <md-icon md-menu-origin md-svg-icon="assets/img/ic_overflow.svg"></md-icon>
+                            </md-button>
+                            <md-menu-content>
+                                <md-menu-item>
+                                    <md-button id="editBtn" ng-click="editFn()">
+                                        <md-icon md-menu-align-target md-svg-icon="assets/img/ic_edit.svg"></md-icon> Edit post
+                                    </md-button>
+                                </md-menu-item>
+                                <md-menu-item>
+                                    <md-button id="deleteBtn" ng-click="deleteFn()">
+                                        <md-icon md-menu-align-target md-svg-icon="assets/img/ic_delete.svg"></md-icon> Delete post
+                                    </md-button>
+                                </md-menu-item>
+                            </md-menu-content>
+                        </md-menu>
+                    </div>
+                </div>
+            </span>
+            <span id="userFullName" class="md-subhead">Posted by {{postModel.userFullName}}</span>
+        </md-card-title-text>
+    </md-card-title>
+    <md-card-content>
+        <p id="body">{{postModel.body}}</p>
+    </md-card-content>
+    <md-card-footer>
+        <md-button id="commentsBtn" class="md-icon-button" aria-label="Comments" ng-click="clickCommentsFn()">
+            <md-icon md-svg-src="assets/img/ic_comment.svg"></md-icon>
+        </md-button>
+        <span id="numOfComments">{{postModel.numOfComments}} {{postModel.numOfComments == 1 ? 'comment' : 'comments'}}</span>
+    </md-card-footer>
+</md-card>

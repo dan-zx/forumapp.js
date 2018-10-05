@@ -1,0 +1,8 @@
+<div layout="column" layout-padding layout-margin layout-align="space-around stretch">
+    <div ng-repeat="post in postsCtrl.posts | filter:postsCtrl.filter">
+        <post post-model="post" show-options-menu="post.userId == postsCtrl.currentUser.id" edit-fn="postsCtrl.showEditPostDialog($event, post)" delete-fn="postsCtrl.deletePost(post)" click-comments-fn="postsCtrl.viewDetail(post)"></post>
+    </div>
+</div>
+<md-button class="md-fab md-primary md-fab-bottom-right fixed" aria-label="Add post" ng-click="postsCtrl.showNewPostDialog($event)">
+    <md-icon md-svg-src="assets/img/ic_add.svg"></md-icon>
+</md-button>

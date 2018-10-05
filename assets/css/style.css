@@ -1,0 +1,47 @@
+.chip-text {
+  background-color: #e0e0e0;
+  border-radius: 50%;
+  font-weight: bold;
+  height: 20px;
+  padding: 4px;
+  text-align: center;
+  width: 20px;
+}
+
+.md-3-line .md-list-item-text h3.white-text,
+.md-3-line .md-list-item-text h4.white-text,
+.white-text {
+  color: white;
+}
+
+.profile-background {
+  background-image: url(../img/profile_background.jpg);
+  background-size: cover; 
+  height: 96px;
+}
+
+.md-fab.md-fab-bottom-right.fixed,
+.fixed {
+  position: fixed;
+}
+
+.italics {
+  font-style: italic;
+}
+
+.match-parent {
+  width: 100%;
+}
+
+.hidden {
+  display: none;
+}
+
+.paper-shadow {
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+}
+
+.md-input-has-placeholder.flex.search-input,
+.search-input {
+  padding-top: 28px;
+}

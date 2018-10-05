@@ -1,0 +1,13 @@
+npm install -g 
+	karma \
+	karma-chrome-launcher \ 
+	karma-jasmine \
+	jasmine-core \
+	ng-html2js \
+	karma-ng-html2js-preprocessor
+
+karma start karma.conf.js
+
+npm install -g http-server
+
+http-server

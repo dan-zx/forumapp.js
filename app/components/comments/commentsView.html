@@ -1,0 +1,18 @@
+<div layout="column" layout-padding layout-margin layout-align="space-around stretch">
+    <post post-model="commentsCtrl.post" show-options-menu="false"></post>
+    <md-list>
+        <div ng-repeat="comment in commentsCtrl.post.comments | filter:commentsCtrl.filter">
+            <comment comment-model="comment" show-options-menu="comment.email == commentsCtrl.currentUser.email" delete-fn="commentsCtrl.deleteComment(comment)"></comment>
+            <md-divider></md-divider>
+        </div>
+    </md-list>
+    <div layout="row">
+        <md-input-container flex>
+            <label>Add a comment</label>
+            <textarea ng-model="commentsCtrl.newComment.body" md-maxlength="140" rows="5" md-select-on-focus></textarea>
+        </md-input-container>
+        <md-button class="md-fab" aria-label="Submit" ng-click="commentsCtrl.addComment()">
+            <md-icon md-svg-src="assets/img/ic_comment.svg"></md-icon>
+        </md-button>
+    </div>
+</div>
